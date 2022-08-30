@@ -8,7 +8,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.carwash.user.models.User;
+import com.carwash.user.models.Customer;
 import com.carwash.user.repositories.UserRepository;
 
 //import springfox.documentation.builders.RequestHandlerSelectors;
@@ -52,12 +52,12 @@ public class UserApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		if(userRepository.findAll().isEmpty()) {
-			userRepository.save(new User("Ayush", "Khamrui", "khamruiasok@gmail.com","Barakar","12345","Tesla"));
-			userRepository.save(new User("Tuhin", "gosh", "tuhin@gmail.com","Ba","12345","Tesla model x"));
+			userRepository.save(new Customer("Ayush", "Khamrui", "khamruiasok@gmail.com","Barakar","12345","Tesla"));
+			userRepository.save(new Customer("Tuhin", "gosh", "tuhin@gmail.com","Ba","12345","Tesla model x"));
 		}
 		
-		for(User user: userRepository.findAll()) {
-			System.out.println(user);
+		for(Customer customer: userRepository.findAll()) {
+			System.out.println(customer);
 		}
 	}
 

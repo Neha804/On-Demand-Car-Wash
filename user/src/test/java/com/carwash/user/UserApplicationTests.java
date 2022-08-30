@@ -14,7 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import com.carwash.user.models.User;
+import com.carwash.user.models.Customer;
 import com.carwash.user.repositories.UserRepository;
 import com.carwash.user.services.UserService;
 
@@ -33,15 +33,15 @@ class UserApplicationTests {
 	
 	@Test
 	public void getUsersTest() {
-		when(userRepository.findAll()).thenReturn(Stream.of(new User("Denis", "Ritchie","denis@gmail.com", "USA","12345","lamborghini")).collect(Collectors.toList()));
+		when(userRepository.findAll()).thenReturn(Stream.of(new Customer("Denis", "Ritchie","denis@gmail.com", "USA","12345","lamborghini")).collect(Collectors.toList()));
 		assertEquals(1, service.getUsers().size());
 	}
 	
 	@Test
 	public void saveUserTest() {
-		User user = new User("Ak", "kk", "Ak@gmail.com", "Pune","123456","ford gt");
-		when(userRepository.save(user)).thenReturn(user);
-		assertEquals(user, service.addUser(user));
+		Customer customer = new Customer("Ak", "kk", "Ak@gmail.com", "Pune","123456","ford gt");
+		when(userRepository.save(customer)).thenReturn(customer);
+		assertEquals(customer, service.addUser(customer));
 	}
 	
 //	@Test

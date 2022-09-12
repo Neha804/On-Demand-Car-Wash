@@ -41,6 +41,8 @@ public class UserApplication implements CommandLineRunner{
 	public static void main(String[] args) {
 		SpringApplication.run(UserApplication.class, args);
 	}
+	
+	
 	@Bean
 	@LoadBalanced
 	public RestTemplate GetTemplate() {
@@ -52,8 +54,8 @@ public class UserApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		if(userRepository.findAll().isEmpty()) {
-			userRepository.save(new Customer("Ayush", "Khamrui", "khamruiasok@gmail.com","Barakar","12345","Tesla"));
-			userRepository.save(new Customer("Tuhin", "gosh", "tuhin@gmail.com","Ba","12345","Tesla model x"));
+			userRepository.save(new Customer("khamruiasok@gmail.com","Ayush", "Khamrui", "Barakar","$2a$12$RkEdY.WQFa4RRqSGzVLjIu8osjpqZ5EwUXkMMO7t09G931MeJUDlC","Tesla","admin"));
+			userRepository.save(new Customer("tuhin@gmail.com","Tuhin", "gosh", "Ba","$2a$12$6d8rFj.PN/P9vQltLWghJ.9U1mkXQpkwh3Jn3f.E5x12zr7xvM8pa","Tesla model x","user"));
 		}
 		
 		for(Customer customer: userRepository.findAll()) {

@@ -3,7 +3,8 @@ package com.carwash.user.models;
 import java.io.Serializable;
 
 public class Request implements Serializable {
-private static final long serialVersionUID = 5926468583005150707L;
+
+	private static final long serialVersionUID = 5926468583005150707L;
 	
 	private String username;
 	private String password;
@@ -34,5 +35,5 @@ private static final long serialVersionUID = 5926468583005150707L;
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }
+

@@ -2,6 +2,7 @@ package com.carwash.user.config;
 
 import java.io.IOException;
 
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,18 +16,18 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.carwash.user.services.UserService;
+import com.carwash.user.services.*;
 
 import io.jsonwebtoken.ExpiredJwtException;
+
 @Component
-public class RequestFilter extends OncePerRequestFilter{
-	
+public class RequestFilter extends OncePerRequestFilter {
+
 	@Autowired
-	private UserService jwtUserDetailsService;
+	private AuthService jwtUserDetailsService;
 
 	@Autowired
 	private TokenClass jwtTokenUtil;
-
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
@@ -72,6 +73,6 @@ public class RequestFilter extends OncePerRequestFilter{
 		}
 		chain.doFilter(request, response);
 	}
-	
 
 }
+

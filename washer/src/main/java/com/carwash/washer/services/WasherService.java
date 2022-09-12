@@ -1,6 +1,7 @@
 package com.carwash.washer.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,11 @@ public class WasherService {
 		return washer;
 	}
 	
-	public void deleteWasher(String emailId) {
-		repository.deleteById(emailId);
+	public void deleteWasher(String washerEmailId) {
+		repository.deleteById(washerEmailId);
+	}
+	
+	public Optional<Washer> getByWasherEmail(String washerEmailId) {
+		return repository.findByEmail(washerEmailId);
 	}
 }

@@ -7,4 +7,4 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Neha804/Car-Wash-Properties
+          uri: https://github.com/Ayush-Khamrui/car-wash

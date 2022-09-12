@@ -19,7 +19,6 @@ import com.carwash.order.repositories.OrderRepository;
 import com.carwash.order.services.OrderService;
 @RestController
 @RequestMapping("/order")
-
 public class OrderController {
 	@Autowired
 	private OrderService service;

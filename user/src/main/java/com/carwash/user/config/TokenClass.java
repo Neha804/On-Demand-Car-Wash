@@ -1,4 +1,5 @@
 package com.carwash.user.config;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,13 +15,14 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
-public class TokenClass implements Serializable{
+public class TokenClass implements Serializable {
+
 	private static final long serialVersionUID = -2550185165626007488L;
 
 	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
 	
-	private String secret="nehasweet";
+	private String secret="tuhinmukh";
 
 	//retrieve username from jwt token
 	public String getUsernameFromToken(String token) {
@@ -71,7 +73,4 @@ public class TokenClass implements Serializable{
 		return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
 	}
 }
-
-
-
 

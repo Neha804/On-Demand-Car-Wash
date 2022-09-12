@@ -3,6 +3,7 @@ package com.carwash.user.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
 @Document
 public class Order {
 	@Id
@@ -15,6 +16,7 @@ public class Order {
 	@Field
 	private String location;
 	
+	public Order() {}
 	
 	public Order(String orderId, String emailId, String orderDate, String location) {
 		super();
@@ -23,10 +25,6 @@ public class Order {
 		this.orderDate = orderDate;
 		this.location = location;
 		
-	}
-	public Order()
-	{
-		//when we get method the value is fetched so we need a default constructor
 	}
 	
 	public String getEmailId() {
@@ -60,5 +58,7 @@ public class Order {
 	public String toString() {
 		return String.format("Order[orderId='%s', emailId='%s', orderDate='%s', location='%s']",orderId,emailId,orderDate,location);
 	}
+	
+	
 	
 }

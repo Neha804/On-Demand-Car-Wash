@@ -8,9 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Washer {
 	@Id
 	@Field
-	private String emailId;
+	private String washerEmailId;
 	@Field
-	private String name;
+	private String washerName;
 	@Field
 	private String location;
 	@Field
@@ -20,16 +20,18 @@ public class Washer {
 	@Field
 	private String password;
 	
-	public Washer(String emailId, String name, String location, String description, long phoneNo, String password) {
+	public Washer(String washerEmailId, String washerName, String location, String description, long phoneNo,
+			String password) {
 		super();
-		this.emailId = emailId;
-		this.name = name;
+		this.washerEmailId = washerEmailId;
+		this.washerName = washerName;
 		this.location = location;
 		this.description = description;
 		this.phoneNo = phoneNo;
 		this.password = password;
 	}
-	
+
+
 	public String getPassword() {
 		return password;
 	}
@@ -37,12 +39,12 @@ public class Washer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getEmailId() {
-		return emailId;
+	
+	public String getWasherEmailId() {
+		return washerEmailId;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setWasherEmailId(String washerEmailId) {
+		this.washerEmailId = washerEmailId;
 	}
 	public long getPhoneNo() {
 		return phoneNo;
@@ -50,12 +52,17 @@ public class Washer {
 	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public String getName() {
-		return name;
+	
+	public String getWasherName() {
+		return washerName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+
+
+	public void setWasherName(String washerName) {
+		this.washerName = washerName;
 	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -71,7 +78,7 @@ public class Washer {
 	
 	@Override
 	public String toString() {
-		return String.format("User[Name='%s', Location='%s', emailId='%s', Description='%s', Phone No.='%lu']",name,location,emailId,description,phoneNo);
+		return String.format("User[WasherName='%s', Location='%s', emailId='%s', Description='%s', Phone No.='%lu']",washerName,location,washerEmailId,description,phoneNo);
 	}
 	
 	
